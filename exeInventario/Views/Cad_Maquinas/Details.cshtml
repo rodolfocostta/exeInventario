@@ -1,0 +1,31 @@
+﻿@model exeInventario.Models.Cad_Maquinas
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Cad_Maquinas</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Modelo_Maq)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Modelo_Maq)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Peças_Maq)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Peças_Maq)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.ID_Maq">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

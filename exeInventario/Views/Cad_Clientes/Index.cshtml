@@ -1,0 +1,48 @@
+﻿@model IEnumerable<exeInventario.Models.Cad_Clientes>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Cadastrar</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome_Cli)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telelfone_Cli)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email_Cli)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome_Cli)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telelfone_Cli)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email_Cli)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID_Cli">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.ID_Cli">Detales</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID_Cli">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
